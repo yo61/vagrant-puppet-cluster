@@ -1,0 +1,25 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    puppetlabs-apt (1.6.0)
+      puppetlabs-stdlib (>= 2.2.1)
+    puppetlabs-concat (1.1.0)
+      puppetlabs-stdlib (>= 4.0.0)
+    puppetlabs-postgresql (3.4.2)
+      puppetlabs-apt (< 2.0.0, >= 1.1.0)
+      puppetlabs-concat (< 2.0.0, >= 1.0.0)
+      puppetlabs-firewall (>= 0.0.4)
+      puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
+    puppetlabs-stdlib (4.3.2)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-firewall.git
+  ref: master
+  sha: d5a10f5a52d84b9fcfb8fc65ef505685a07d5799
+  specs:
+    puppetlabs-firewall (1.1.3)
+
+DEPENDENCIES
+  puppetlabs-firewall (>= 0)
+  puppetlabs-postgresql (>= 0)
+
