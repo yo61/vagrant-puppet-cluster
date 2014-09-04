@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # use shell to install puppet
   config.vm.provision "shell" do |shell|
-    shell.path = 'centos_7_x.sh'
+    shell.path = 'centos_6_x.sh'
   end
 
   # use puppet standalone to provision
@@ -30,17 +30,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # define the machines
   config.vm.define "node01" do |node|
-    node.vm.box = "centos-7-puppet-x86_64"
+    node.vm.box = "centos-6.5-x86_64"
     node.vm.network "private_network", ip: "192.168.51.10"
     node.vm.hostname = "node01.ubnt.int.yo61.net"
   end
   config.vm.define "node02" do |node|
-    node.vm.box = "centos-7-puppet-x86_64"
+    node.vm.box = "centos-6.5-x86_64"
     node.vm.network "private_network", ip: "192.168.51.11"
     node.vm.hostname = "node02.ubnt.int.yo61.net"
   end
   config.vm.define "node03" do |node|
-    node.vm.box = "centos-7-puppet-x86_64"
+    node.vm.box = "centos-6.5-x86_64"
     node.vm.network "private_network", ip: "192.168.51.12"
     node.vm.hostname = "node03.ubnt.int.yo61.net"
   end
