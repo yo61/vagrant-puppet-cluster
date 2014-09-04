@@ -28,7 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.manifest_file  = "site.pp"
   end
 
-  # Every Vagrant virtual environment requires a box to build off of.
+  # define the machines
   config.vm.define "node01" do |node|
     node.vm.box = "centos-7-puppet-x86_64"
     node.vm.network "private_network", ip: "192.168.51.10"
