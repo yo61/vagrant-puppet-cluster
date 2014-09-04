@@ -19,7 +19,25 @@ GIT
   specs:
     puppetlabs-firewall (1.1.3)
 
+PATH
+  remote: ./profiles/profile_postgresql_server_puppetdb
+  specs:
+    local-profile_postgresql_server_puppetdb (0.0.1)
+
+PATH
+  remote: ./roles/role_postgresql_server_puppetdb
+  specs:
+    local-role_postgresql_server_puppetdb (0.0.1)
+
+PATH
+  remote: ./roles/role_puppetdb_server
+  specs:
+    local-role_puppetdb_server (0.0.1)
+
 DEPENDENCIES
+  local-profile_postgresql_server_puppetdb (>= 0)
+  local-role_postgresql_server_puppetdb (>= 0)
+  local-role_puppetdb_server (>= 0)
   puppetlabs-firewall (>= 0)
   puppetlabs-postgresql (>= 0)
 
