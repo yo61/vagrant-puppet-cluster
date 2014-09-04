@@ -19,7 +19,8 @@ fi
 # Install puppet labs repo
 echo "Configuring PuppetLabs repo..."
 repo_path=$(mktemp)
-wget --output-document="${repo_path}" "${REPO_URL}" 2>/dev/null
+curl --silent --output "${repo_path}" "${REPO_URL}"
+#wget --output-document="${repo_path}" "${REPO_URL}" 2>/dev/null
 rpm -i "${repo_path}" >/dev/null
 
 # Install Puppet...
