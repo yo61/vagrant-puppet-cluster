@@ -2,6 +2,7 @@
 postgresql_ip: 192.168.51.10
 postgresql_version: '9.3'
 puppetdb_ip: 192.168.51.11
+puppetdb_port: 8080
 puppetdb_name: puppetdb
 puppetdb_user: puppetdb
 puppetdb_pass: secret
