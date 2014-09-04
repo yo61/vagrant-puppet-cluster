@@ -13,6 +13,7 @@ forge "https://forgeapi.puppetlabs.com"
 mod 'puppetlabs-postgresql'
 mod 'puppetlabs-puppetdb'
 mod 'stephenrjohnson-puppet'
+mod 'stahnma-epel'
 
 # A module from git
 mod 'puppetlabs-firewall',
