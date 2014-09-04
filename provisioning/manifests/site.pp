@@ -1,4 +1,3 @@
-#	new file:   .librarian/puppet/config postgres server
 node 'node01.ubnt.int.yo61.net' {
 
   include ::role_postgresql_server_puppetdb
@@ -13,12 +12,7 @@ node 'node01.ubnt.int.yo61.net' {
 
 node 'node02.ubnt.int.yo61.net' {
 
-  class { '::postgresql::globals':
-    manage_package_repo => true,
-    version             => $postgresql_version,
-    encoding            => 'UTF8',
-  }->
-  class{'::postgresql::client':}
+  include ::role_puppetdb_server
 
 }
 

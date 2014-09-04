@@ -25,6 +25,9 @@ mod 'local-role_puppetdb_server',
 mod 'local-profile_postgresql_server_puppetdb',
   :path => './profiles/profile_postgresql_server_puppetdb'
 
+mod 'local-profile_postgresql_client',
+  :path => './profiles/profile_postgresql_client'
+
 # A module from a git branch/tag
 # mod 'puppetlabs-apt',
 #   :git => 'https://github.com/puppetlabs/puppetlabs-apt.git',
