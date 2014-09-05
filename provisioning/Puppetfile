@@ -43,8 +43,8 @@ mod 'local-profile_puppetdb',
 mod 'local-profile_puppet_master',
   :path => './local/profiles/profile_puppet_master'
 
-mod 'yo61-puppet',
-  :path => '~/Workspace/yo61-puppet-module'
+mod 'stephenrjohnson-puppet',
+  :path => '~/Workspace/stephenrjohnson-puppet'
 
 # A module from a git branch/tag
 # mod 'puppetlabs-apt',
