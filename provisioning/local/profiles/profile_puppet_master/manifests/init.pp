@@ -21,4 +21,17 @@ class profile_puppet_master{
   }~>
   Service['httpd']
 
+  puppet::masterenv{'production':
+    modulepath => '/etc/puppet/modules',
+    manifest   => 'production',
+  }
+  # create production env. directory
+  # T
+  #file{"${::puppet::params::environmentpath}/production":
+  #  ensure => directory,
+  #  owner  => 'root',
+  # group  => 'root',
+  #  mode   => '0755',
+  #}
+
 }
