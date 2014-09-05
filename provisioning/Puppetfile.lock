@@ -1,9 +1,6 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
-    puppetlabs-apache (1.1.1)
-      puppetlabs-concat (>= 1.0.0)
-      puppetlabs-stdlib (>= 2.4.0)
     puppetlabs-apt (1.6.0)
       puppetlabs-stdlib (>= 2.2.1)
     puppetlabs-concat (1.1.0)
@@ -16,11 +13,6 @@ FORGE
       puppetlabs-concat (< 2.0.0, >= 1.0.0)
       puppetlabs-firewall (>= 0.0.4)
       puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
-    puppetlabs-puppetdb (3.0.1)
-      puppetlabs-firewall (>= 0.0.4)
-      puppetlabs-inifile (~> 1.0)
-      puppetlabs-postgresql (< 4.0.0, >= 3.1.0)
-      puppetlabs-stdlib (>= 2.2.0)
     puppetlabs-stdlib (4.3.2)
     stahnma-epel (0.1.1)
 
@@ -77,13 +69,19 @@ PATH
     local-role_puppetdb_server (0.0.1)
 
 PATH
-  remote: ~/Workspace/stephenrjohnson-puppet
+  remote: ~/Workspace/yo61-puppet
   specs:
-    stephenrjohnson-puppet (0.0.23)
-      puppetlabs-apache (>= 1.0.1)
-      puppetlabs-inifile (>= 1.0.0)
-      puppetlabs-puppetdb (>= 2.0.0)
-      puppetlabs-stdlib (>= 3.0.0)
+    yo61-puppet (0.1.0)
+      puppetlabs-stdlib (>= 1.0.0)
+
+PATH
+  remote: ~/Workspace/yo61-puppetdb
+  specs:
+    yo61-puppetdb (3.0.1)
+      puppetlabs-firewall (>= 0.0.4)
+      puppetlabs-inifile (~> 1.0)
+      puppetlabs-postgresql (< 4.0.0, >= 3.1.0)
+      puppetlabs-stdlib (>= 3.1.0)
 
 DEPENDENCIES
   local-profile_common (>= 0)
@@ -98,7 +96,7 @@ DEPENDENCIES
   puppetlabs-firewall (>= 0)
   puppetlabs-ntp (>= 0)
   puppetlabs-postgresql (>= 0)
-  puppetlabs-puppetdb (>= 0)
   stahnma-epel (>= 0)
-  stephenrjohnson-puppet (>= 0)
+  yo61-puppet (>= 0)
+  yo61-puppetdb (>= 0)
 

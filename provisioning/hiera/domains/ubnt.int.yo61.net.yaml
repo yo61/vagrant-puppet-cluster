@@ -1,13 +1,104 @@
 ---
-postgresql_ip: 192.168.51.10
-postgresql_version: '9.3'
-puppetdb_ip: 192.168.51.11
-puppetdb_port: 8080
-puppetdb_name: puppetdb
-puppetdb_user: puppetdb
-puppetdb_pass: secret
-puppet.certname: puppet.ubnt.int.yo61.net
-ssl.ca/ca_crl.pem: |
+postgresql.listen_addresses: 192.168.51.10
+postgresql.port: 5432
+postgresql.version: '9.3'
+
+puppetdb.listen_address: localhost
+puppetdb.listen_port: 8080
+puppetdb.ssl_listen_address: 192.168.51.11
+puppetdb.ssl_listen_port: 8081
+puppetdb.database_name: puppetdb
+puppetdb.database_username: puppetdb
+puppetdb.database_password: secret
+
+puppetdb.ssl_cert: |
+  -----BEGIN CERTIFICATE-----
+  MIIFizCCA3OgAwIBAgIBAzANBgkqhkiG9w0BAQsFADAwMS4wLAYDVQQDDCVQdXBw
+  ZXQgQ0E6IHB1cHBldGNhLnVibnQuaW50LnlvNjEubmV0MB4XDTE0MDkwNDE1MDU1
+  MVoXDTE5MDkwNDE1MDU1MVowJTEjMCEGA1UEAwwacHVwcGV0ZGIudWJudC5pbnQu
+  eW82MS5uZXQwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDevQiWl1GV
+  G8RWSB7K2nynjNFMXtMrYfrOGiybY4+LPzEStdP8yC3LVsrYJWHbbxYEavP/xxa/
+  H2m4HnDVV3HNuI5GRGe5H1n3IUJnZnd1wuZJ7DIVeQEeMVGw3D1WOuRhfzXMv+ym
+  gaYqH6J30IU0BYDr7uaqUTqlX8MjdEea+NTcSt7YM2cNAYev6VcjHDAZ8opF/S4U
+  x2TTHZOerLEMKk2HrdFl4OnClTz7/jJ8JKI4kxNAvjcLUuGyhIe7lSvoWPHMuIEr
+  Cp31aSK20rm3yi1/MMFsaJKxPHrBWDpcAMr8u0m3VYyjXnN2alcXoA7yDeP2LMrE
+  Ebges8/vRljZVIjuZAU/XwKQSVH6tvve70UN5O7aB5U2RzYC/ZSyY+AHqs0vYZDD
+  fOV286DsHm9bAk+QbF9wsfFQKoHzQUzD+h7lrnWK8bkY2qemWiTDFx0rbn8lqx1p
+  uaHZ72zKqxyILgNA80QN5189RMt2C/DzrvJ9kcaT3sVYWXy865ef9ACRvnYZSb0R
+  nU1GV8RcYPejlefKRMmUKz56Ic4QWTCwMZnR8ItWNR1/XSurJ42ZH7yqgq6Fxkuc
+  T/3OVMmtyUb0FNG9fujPRHujTtQEYX9c4yIjkQTqESAX3oZMu4jNHsuK489tjOZF
+  x5jOJvUHNx35q6wDQbbMWvqo1oQLG9C8UQIDAQABo4G6MIG3MDUGCWCGSAGG+EIB
+  DQQoUHVwcGV0IFJ1YnkvT3BlblNTTCBJbnRlcm5hbCBDZXJ0aWZpY2F0ZTAOBgNV
+  HQ8BAf8EBAMCBaAwIAYDVR0lAQH/BBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwG
+  A1UdEwEB/wQCMAAwHQYDVR0OBBYEFA2wTM6F8/jpmYNKP/5Q7v5OglkvMB8GA1Ud
+  IwQYMBaAFEmjwE8LGdZUC00k8bEtTaxuDVJiMA0GCSqGSIb3DQEBCwUAA4ICAQBZ
+  U1dVGXjTxSfwKrRCBt1aplrG1+7PVvlOTtMwoCII+Kgaf5d7uighFJEXRrX/dUlu
+  rYNhwc3SW5BXriMYL0WciWuFO66uJrlx9xDfg+qPxOieqIRmnhOQXGJl5mB7u2oI
+  MgjoYwDPVzsIpoT6CCNUeJ3MUktYStwbIRC1/p33jX9XLzY1jMtI6R7jAT0kjj/0
+  cQg4WCiJwDSnYZBl+3dQuM9BB+NNVtoXjmaACDS/mvP+jROcAvGOynnV8cDD+WbI
+  H40KKx8aVowV1blO3HFzPFIW6ihiiWBORU53YvqKGR41vixQObLc1WJt0M1CAzuj
+  6rM+oN6fQZCVrPZQ2OhuNcTArsG4cP4WYWoL118TDX/HERZgKGG7lhc+HW2w48Tp
+  F8cQd3oTh3pqmM6eXi0OpYlSrMPzq45EorCxlC3yuh253FLeeSDUErOhPy4TjX07
+  003M/y1bkjNVjdOx6yvjcBxI7aTDZhdcMg0dEUcYRZtSs0ybQUZZEOsoPIO533Sn
+  DbTq6O02waSH5mCrsCI/ZgS1rd340kO1frTHWpdnIQfKenXyJqjV8NGM7qFQkQQL
+  E6E/To74Vx/ORiLMDoTReWrByMN5qPo0wsTw6Xux3n+cZ8T6lEkVOI8CGeM0DR3T
+  m3hXxGCcNm0d3vrwpuH+Fuo3/JFa24p2ccd6n36hIw==
+  -----END CERTIFICATE-----
+puppetdb.ssl_key: |
+  -----BEGIN RSA PRIVATE KEY-----
+  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
+  -----END RSA PRIVATE KEY-----
+
+puppet.master.certname: puppet.ubnt.int.yo61.net
+puppet.master.ssl.ca/ca_crl.pem: |
   -----BEGIN X509 CRL-----
   MIICqjCBkwIBATANBgkqhkiG9w0BAQUFADAwMS4wLAYDVQQDDCVQdXBwZXQgQ0E6
   IHB1cHBldGNhLnVibnQuaW50LnlvNjEubmV0Fw0xNDA5MDUxMTExNDRaFw0xOTA5
@@ -25,7 +116,7 @@ ssl.ca/ca_crl.pem: |
   a0Yu49sGvoQfBJrZKokWONLZgIbCDcxF8jMuX0slXdA9Xz+PyVayZo31uZUrCacG
   9jpeP5wEpYXVowddGVE=
   -----END X509 CRL-----
-ssl.ca/ca_crt.pem: |
+puppet.master.ssl.ca/ca_crt.pem: |
   -----BEGIN CERTIFICATE-----
   MIIFmjCCA4KgAwIBAgIBATANBgkqhkiG9w0BAQsFADAwMS4wLAYDVQQDDCVQdXBw
   ZXQgQ0E6IHB1cHBldGNhLnVibnQuaW50LnlvNjEubmV0MB4XDTE0MDkwNDExMTE0
@@ -58,7 +149,7 @@ ssl.ca/ca_crt.pem: |
   rm5LosNKBtyrJrm6E0zAjUY6eJAiEWIrQxmt6BUSsaOJj2i8qO4yRjM7eyjIKqlC
   pqzWVgxDfj8tM7iBKApCJVbhuhwcxb+yj2eK7YRqMfwFOEkHF1W9woKdGjkX0A==
   -----END CERTIFICATE-----
-ssl.ca/ca_key.pem: |
+puppet.master.ssl.ca/ca_key.pem: |
   -----BEGIN RSA PRIVATE KEY-----
   MIIJKAIBAAKCAgEAwzrbxMeL/sRxl5PXkGpMp2FDy+6YBCRqWXonkanPcy6n/FzT
   gw3LbduB3BKOXqKxnsbE0GG3aofn2hN6RmGgnrV2qa8I7A1fWWbWYH7P43FFEIkq
@@ -110,14 +201,14 @@ ssl.ca/ca_key.pem: |
   9YMhKnqyC/acIEN3vOJ5kR2863yKqxGqIF5dGKaW4/n6g5NQrV/CnSZ5T+S8wmma
   opC6466Gg9p1g26rI8KCWCavqvA8kJk+x4B4ELi+82HbwsheLetEUkFnkNE=
   -----END RSA PRIVATE KEY-----
-ssl.ca/inventory.txt: |
+puppet.master.ssl.ca/inventory.txt: |
   0x0001 2014-09-04T11:11:45UTC 2019-09-04T11:11:45UTC /CN=Puppet CA: puppetca.ubnt.int.yo61.net
   0x0002 2014-09-04T11:12:47UTC 2019-09-04T11:12:47UTC /CN=puppet.ubnt.int.yo61.net
-ssl.ca/private/ca.pass: |
+puppet.master.ssl.ca/private/ca.pass: |
   ;10;l3<pwuFEa8atatc[
-ssl.ca/serial: |
+puppet.master.ssl.ca/serial: |
   0003
-ssl.ca/signed/puppet.ubnt.int.yo61.net.pem: |
+puppet.master.ssl.ca/signed/puppet.ubnt.int.yo61.net.pem: |
   -----BEGIN CERTIFICATE-----
   MIIFyjCCA7KgAwIBAgIBAjANBgkqhkiG9w0BAQsFADAwMS4wLAYDVQQDDCVQdXBw
   ZXQgQ0E6IHB1cHBldGNhLnVibnQuaW50LnlvNjEubmV0MB4XDTE0MDkwNDExMTI0
@@ -151,7 +242,7 @@ ssl.ca/signed/puppet.ubnt.int.yo61.net.pem: |
   wKuHcHvyiPYN/oGyV7CUfamCTBEBR1xFMYuEpQFrVTfRPPgAJ8K1PGqBcdYt2WX6
   /J9QRMmuOH34IvyL/5rDLYup+r2ETWlwEls/N3x0OQ4kH83q2n1r5KKQogsRIg==
   -----END CERTIFICATE-----
-ssl.certs/ca.pem: |
+puppet.master.ssl.certs/ca.pem: |
   -----BEGIN CERTIFICATE-----
   MIIFmjCCA4KgAwIBAgIBATANBgkqhkiG9w0BAQsFADAwMS4wLAYDVQQDDCVQdXBw
   ZXQgQ0E6IHB1cHBldGNhLnVibnQuaW50LnlvNjEubmV0MB4XDTE0MDkwNDExMTE0
@@ -184,7 +275,7 @@ ssl.certs/ca.pem: |
   rm5LosNKBtyrJrm6E0zAjUY6eJAiEWIrQxmt6BUSsaOJj2i8qO4yRjM7eyjIKqlC
   pqzWVgxDfj8tM7iBKApCJVbhuhwcxb+yj2eK7YRqMfwFOEkHF1W9woKdGjkX0A==
   -----END CERTIFICATE-----
-ssl.certs/puppet.ubnt.int.yo61.net.pem: |
+puppet.master.ssl.certs/puppet.ubnt.int.yo61.net.pem: |
   -----BEGIN CERTIFICATE-----
   MIIFyjCCA7KgAwIBAgIBAjANBgkqhkiG9w0BAQsFADAwMS4wLAYDVQQDDCVQdXBw
   ZXQgQ0E6IHB1cHBldGNhLnVibnQuaW50LnlvNjEubmV0MB4XDTE0MDkwNDExMTI0
@@ -218,7 +309,7 @@ ssl.certs/puppet.ubnt.int.yo61.net.pem: |
   wKuHcHvyiPYN/oGyV7CUfamCTBEBR1xFMYuEpQFrVTfRPPgAJ8K1PGqBcdYt2WX6
   /J9QRMmuOH34IvyL/5rDLYup+r2ETWlwEls/N3x0OQ4kH83q2n1r5KKQogsRIg==
   -----END CERTIFICATE-----
-ssl.private_keys/puppet.ubnt.int.yo61.net.pem: |
+puppet.master.ssl.private_keys/puppet.ubnt.int.yo61.net.pem: |
   -----BEGIN RSA PRIVATE KEY-----
   MIIJKQIBAAKCAgEAq5R/55zH9Hz7xrdZtadw3IOLmBXly17bdpBYQ6sHoh2yrNFM
   sYcas9uWbidVWdI1qciNgpKchS+k1sUpAagoZ7euuFBiowC9kZzNefnxMLVWD88o
@@ -270,7 +361,7 @@ ssl.private_keys/puppet.ubnt.int.yo61.net.pem: |
   EEaOrfFpqRgBYJ5TNcNrX2YVqXN2vN+tOtfFsr8v27RkfXJR4MUVgSzDcFjBfhiz
   gqWc/iz2wR6J3D/cSQ+nyKgsLERac1mOUaK07u5MfoMe2DhTAz4jnpsS8DMF
   -----END RSA PRIVATE KEY-----
-ssl.public_keys/puppet.ubnt.int.yo61.net.pem: |
+puppet.master.ssl.public_keys/puppet.ubnt.int.yo61.net.pem: |
   -----BEGIN PUBLIC KEY-----
   MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAq5R/55zH9Hz7xrdZtadw
   3IOLmBXly17bdpBYQ6sHoh2yrNFMsYcas9uWbidVWdI1qciNgpKchS+k1sUpAago

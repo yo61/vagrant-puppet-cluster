@@ -1,6 +1,6 @@
 class profile_postgresql_client{
 
-  $postgresql_version = hiera('postgresql_version')
+  $postgresql_version = hiera('postgresql.version')
 
   class { '::postgresql::globals':
     manage_package_repo => true,
