@@ -1,14 +1,14 @@
 # install a puppet master
 class profile_puppet_master{
 
-  $puppetdb_ip = hiera('puppetdb.ssl_listen_address')
+  $storeconfigs_dbserver = hiera('puppetdb.certname')
   $puppet_certname = hiera('puppet.master.certname')
   $ssldir = '/var/lib/puppet/ssl'
 
   class{'puppet::master':
     environments               => 'directory',
     storeconfigs               => true,
-    storeconfigs_dbserver      => $puppetdb_ip,
+    storeconfigs_dbserver      => $storeconfigs_dbserver,
     generate_ssl_certs         => false,
     certname                   => $puppet_certname,
     puppetdb_strict_validation => false,
