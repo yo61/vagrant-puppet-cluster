@@ -1,0 +1,7 @@
+Creates a 3-node puppet cluster:
+
+node01: postgresqwl
+node02: puppetdb:
+node03: puppet master
+
+puppetdb and puppet master certs are pre-generated and stored in hiera
