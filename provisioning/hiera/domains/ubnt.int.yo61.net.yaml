@@ -5,6 +5,7 @@ postgresql.version: '9.3'
 
 puppetdb.listen_address: localhost
 puppetdb.listen_port: 8080
+puppetdb.certname: puppetdb.ubnt.int.yo61.net
 puppetdb.ssl_listen_address: 192.168.51.11
 puppetdb.ssl_listen_port: 8081
 puppetdb.database_name: puppetdb
