@@ -12,6 +12,7 @@ forge "https://forgeapi.puppetlabs.com"
 # A module from the Puppet Forge
 mod 'puppetlabs-postgresql'
 mod 'puppetlabs-puppetdb'
+mod 'puppetlabs-ntp'
 #mod 'stephenrjohnson-puppet'
 mod 'stahnma-epel'
 
@@ -42,6 +43,9 @@ mod 'local-profile_puppetdb',
 
 mod 'local-profile_puppet_master',
   :path => './local/profiles/profile_puppet_master'
+
+mod 'local-profile_ntp',
+  :path => './local/profiles/profile_ntp'
 
 mod 'stephenrjohnson-puppet',
   :path => '~/Workspace/stephenrjohnson-puppet'

@@ -4,8 +4,8 @@
 
 :hierarchy:
   - defaults
-  - clients/"%{::clientcert}"
-  - domains/"%{::domain}"
+  - "clients/%{::clientcert}"
+  - "domains/%{::domain}"
   - global
 
 :yaml:
