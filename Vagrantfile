@@ -28,21 +28,29 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.manifest_file  = "site.pp"
   end
 
+  config.hostmanager.enabled = true
+  #config.hostmanager.manage_host = true
+  config.hostmanager.ignore_private_ip = false
+  config.hostmanager.include_offline = true
+
   # define the machines
   config.vm.define "node01" do |node|
     node.vm.box = "centos-6.5-x86_64"
     node.vm.network "private_network", ip: "192.168.51.10"
     node.vm.hostname = "node01.ubnt.int.yo61.net"
+    node.hostmanager.aliases = %w(postgresql.ubnt.int.yo61.net)
   end
   config.vm.define "node02" do |node|
     node.vm.box = "centos-6.5-x86_64"
     node.vm.network "private_network", ip: "192.168.51.11"
     node.vm.hostname = "node02.ubnt.int.yo61.net"
+    node.hostmanager.aliases = %w(puppetdb.ubnt.int.yo61.net)
   end
   config.vm.define "node03" do |node|
     node.vm.box = "centos-6.5-x86_64"
     node.vm.network "private_network", ip: "192.168.51.12"
     node.vm.hostname = "node03.ubnt.int.yo61.net"
+    node.hostmanager.aliases = %w(puppet.ubnt.int.yo61.net)
   end
 
   # Disable automatic box update checking. If you disable this, then

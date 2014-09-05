@@ -29,40 +29,40 @@ class profile_puppet_master::ssl(
       mode    => '0755';
     "${ssldir}/ca/ca_crl.pem":
       ensure  => 'file',
-      content => hiera('ssl.ca/ca_crl.pem'),
+      content => hiera('puppet.master.ssl.ca/ca_crl.pem'),
       mode    => '0644';
     "${ssldir}/ca/ca_crt.pem":
       ensure  => 'file',
-      content => hiera('ssl.ca/ca_crt.pem'),
+      content => hiera('puppet.master.ssl.ca/ca_crt.pem'),
       mode    => '0644';
     "${ssldir}/ca/ca_key.pem":
       ensure  => 'file',
-      content => hiera('ssl.ca/ca_key.pem'),
+      content => hiera('puppet.master.ssl.ca/ca_key.pem'),
       mode    => '0640';
     "${ssldir}/ca/inventory.txt":
       ensure  => 'file',
-      content => hiera('ssl.ca/inventory.txt'),
+      content => hiera('puppet.master.ssl.ca/inventory.txt'),
       mode    => '0644';
     "${ssldir}/ca/private":
       ensure  => 'directory',
       mode    => '0750';
     "${ssldir}/ca/private/ca.pass":
       ensure  => 'file',
-      content => hiera('ssl.ca/private/ca.pass'),
+      content => hiera('puppet.master.ssl.ca/private/ca.pass'),
       mode    => '0640';
     "${ssldir}/ca/requests":
       ensure  => 'directory',
       mode    => '0755';
     "${ssldir}/ca/serial":
       ensure  => 'file',
-      content => hiera('ssl.ca/serial'),
+      content => hiera('puppet.master.ssl.ca/serial'),
       mode    => '0644';
     "${ssldir}/ca/signed":
       ensure  => 'directory',
       mode    => '0755';
     "${ssldir}/ca/signed/${certname}.pem":
       ensure  => 'file',
-      content => hiera("ssl.ca/signed/${certname}.pem"),
+      content => hiera("puppet.master.ssl.ca/signed/${certname}.pem"),
       mode    => '0644';
     "${ssldir}/certificate_requests":
       ensure  => 'directory',
@@ -72,11 +72,11 @@ class profile_puppet_master::ssl(
       mode    => '0755';
     "${ssldir}/certs/ca.pem":
       ensure  => 'file',
-      content => hiera('ssl.certs/ca.pem'),
+      content => hiera('puppet.master.ssl.certs/ca.pem'),
       mode    => '0644';
     "${ssldir}/certs/${certname}.pem":
       ensure  => 'file',
-      content => hiera("ssl.certs/${certname}.pem"),
+      content => hiera("puppet.master.ssl.certs/${certname}.pem"),
       mode    => '0644';
     "${ssldir}/private":
       ensure  => 'directory',
@@ -86,14 +86,14 @@ class profile_puppet_master::ssl(
       mode    => '0750';
     "${ssldir}/private_keys/${certname}.pem":
       ensure  => 'file',
-      content => hiera("ssl.private_keys/${certname}.pem"),
+      content => hiera("puppet.master.ssl.private_keys/${certname}.pem"),
       mode    => '0640';
     "${ssldir}/public_keys":
       ensure  => 'directory',
       mode    => '0755';
     "${ssldir}/public_keys/${certname}.pem":
       ensure  => 'file',
-      content => hiera("ssl.public_keys/${certname}.pem"),
+      content => hiera("puppet.master.ssl.public_keys/${certname}.pem"),
       mode    => '0644';
   }
 
