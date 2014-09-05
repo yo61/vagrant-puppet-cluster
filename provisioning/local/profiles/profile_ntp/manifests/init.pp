@@ -4,7 +4,7 @@ class profile_ntp{
   validate_array($ntp_servers)
 
   class{'ntp':
-    servers = $ntp_servers,
+    servers => $ntp_servers,
   }
 
 }
