@@ -15,6 +15,7 @@ mod 'puppetlabs-postgresql'
 mod 'puppetlabs-ntp'
 #mod 'stephenrjohnson-puppet'
 mod 'stahnma-epel'
+mod 'nibalizer-puppetboard'
 
 # A module from git
 mod 'puppetlabs-firewall',
@@ -28,6 +29,9 @@ mod 'local-role_puppetdb_server',
 
 mod 'local-role_puppet_master',
   :path => './local/roles/role_puppet_master'
+
+mod 'local-role_puppetboard',
+  :path => './local/roles/role_puppetboard'
 
 mod 'local-profile_common',
   :path => './local/profiles/profile_common'
@@ -49,6 +53,9 @@ mod 'local-profile_ntp',
 
 mod 'local-profile_puppet_agent',
   :path => './local/profiles/profile_puppet_agent'
+
+mod 'local-profile_puppetboard',
+  :path => './local/profiles/profile_puppetboard'
 
 mod 'yo61-puppet',
   :path => '~/Workspace/yo61-puppet'

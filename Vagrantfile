@@ -52,6 +52,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     node.vm.hostname = "node03.ubnt.int.yo61.net"
     node.hostmanager.aliases = %w(puppet.ubnt.int.yo61.net)
   end
+  config.vm.define "node04" do |node|
+    node.vm.box = "centos-6.5-x86_64"
+    node.vm.network "private_network", ip: "192.168.51.13"
+    node.vm.hostname = "node04.ubnt.int.yo61.net"
+    node.hostmanager.aliases = %w(pboard.ubnt.int.yo61.net)
+  end
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

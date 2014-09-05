@@ -1,6 +1,10 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
+    nibalizer-puppetboard (2.5.0)
+      puppetlabs-stdlib (>= 3.0.0)
+      puppetlabs-vcsrepo (>= 0.1.2)
+      stankevich-python (>= 1.1.4)
     puppetlabs-apache (1.1.1)
       puppetlabs-concat (>= 1.0.0)
       puppetlabs-stdlib (>= 2.4.0)
@@ -22,7 +26,10 @@ FORGE
       puppetlabs-postgresql (< 4.0.0, >= 3.1.0)
       puppetlabs-stdlib (>= 2.2.0)
     puppetlabs-stdlib (4.3.2)
+    puppetlabs-vcsrepo (1.1.0)
     stahnma-epel (0.1.1)
+    stankevich-python (1.7.9)
+      puppetlabs-stdlib (>= 4.0.0)
 
 GIT
   remote: git://github.com/puppetlabs/puppetlabs-firewall.git
@@ -62,6 +69,11 @@ PATH
     local-profile_puppet_master (0.0.1)
 
 PATH
+  remote: ./local/profiles/profile_puppetboard
+  specs:
+    local-profile_puppetboard (0.0.1)
+
+PATH
   remote: ./local/profiles/profile_puppetdb
   specs:
     local-profile_puppetdb (0.0.1)
@@ -75,6 +87,11 @@ PATH
   remote: ./local/roles/role_puppet_master
   specs:
     local-role_puppet_master (0.0.1)
+
+PATH
+  remote: ./local/roles/role_puppetboard
+  specs:
+    local-role_puppetboard (0.0.1)
 
 PATH
   remote: ./local/roles/role_puppetdb_server
@@ -106,10 +123,13 @@ DEPENDENCIES
   local-profile_postgresql_server_puppetdb (>= 0)
   local-profile_puppet_agent (>= 0)
   local-profile_puppet_master (>= 0)
+  local-profile_puppetboard (>= 0)
   local-profile_puppetdb (>= 0)
   local-role_postgresql_server_puppetdb (>= 0)
   local-role_puppet_master (>= 0)
+  local-role_puppetboard (>= 0)
   local-role_puppetdb_server (>= 0)
+  nibalizer-puppetboard (>= 0)
   puppetlabs-firewall (>= 0)
   puppetlabs-ntp (>= 0)
   puppetlabs-postgresql (>= 0)

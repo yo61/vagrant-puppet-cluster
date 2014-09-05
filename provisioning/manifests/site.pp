@@ -19,3 +19,7 @@ node 'node02.ubnt.int.yo61.net' {
 node 'node03.ubnt.int.yo61.net' {
   include ::role_puppet_master
 }
+
+node 'node04.ubnt.int.yo61.net' {
+  include ::role_puppetboard
+}
