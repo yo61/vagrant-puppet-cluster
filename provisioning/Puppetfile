@@ -47,6 +47,9 @@ mod 'local-profile_puppet_master',
 mod 'local-profile_ntp',
   :path => './local/profiles/profile_ntp'
 
+mod 'local-profile_puppet_agent',
+  :path => './local/profiles/profile_puppet_agent'
+
 mod 'yo61-puppet',
   :path => '~/Workspace/yo61-puppet'
 

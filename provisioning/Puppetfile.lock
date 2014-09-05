@@ -52,6 +52,11 @@ PATH
     local-profile_postgresql_server_puppetdb (0.0.1)
 
 PATH
+  remote: ./local/profiles/profile_puppet_agent
+  specs:
+    local-profile_puppet_agent (0.0.1)
+
+PATH
   remote: ./local/profiles/profile_puppet_master
   specs:
     local-profile_puppet_master (0.0.1)
@@ -99,6 +104,7 @@ DEPENDENCIES
   local-profile_ntp (>= 0)
   local-profile_postgresql_client (>= 0)
   local-profile_postgresql_server_puppetdb (>= 0)
+  local-profile_puppet_agent (>= 0)
   local-profile_puppet_master (>= 0)
   local-profile_puppetdb (>= 0)
   local-role_postgresql_server_puppetdb (>= 0)
