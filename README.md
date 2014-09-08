@@ -36,7 +36,7 @@ for n in 1 2 3 4; do vagrant ssh --command "sudo puppet agent --test" node0$n ; 
 # should be able to to this a better way, eg. in puppet
 vagrant ssh --command "sudo usermod -G puppet -a puppetboard && sudo service httpd restart" node04
 ```
-Now browse to http://pboard.ubnt.int.yo61.neto
+Now browse to http://pboard.ubnt.int.yo61.net
 
 If there are problems, check puppetboard can talk to puppetdb as follows:
 ```
