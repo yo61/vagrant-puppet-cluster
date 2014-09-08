@@ -1,7 +1,12 @@
-Creates a 3-node puppet cluster:
+Creates a 4-node puppet cluster:
 
-node01: postgresqwl
-node02: puppetdb:
+node01: postgresql
+node02: puppetdb
 node03: puppet master
+node04: puppetboard
 
-puppetdb and puppet master certs are pre-generated and stored in hiera
+puppet ca, puppet master, puppetdb, & pboard certs are pre-generated and stored in hiera
+
+vagrant hostmanager plugin used to update hosts files (guests and host)
+
+puppet is used to provision the hosts - modules are installed to the modules dir using librarian-puppet. roles and profiles are installed from the "local" dir; other modules are either installed from the forge, or directly from github. 
