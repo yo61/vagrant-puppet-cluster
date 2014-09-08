@@ -30,13 +30,21 @@ To generate client certs, run:
 for n in 1 2 3 4; do vagrant ssh --command "sudo puppet agent --test" node0$n ; done
 
 # sign the certs on the master
-vagrant ssh --command 'for n in 1 2 3 4 ; do sudo puppet cert sign node0$n.ubnt.int.yo61.net ; done' nodoe03
+vagrant ssh --command 'for n in 1 2 3 4 ; do sudo puppet cert sign node0$n.ubnt.int.yo61.net ; done' node03
 
 # second run - cert gets pulled down to client and populates puppetdb
 for n in 1 2 3 4; do vagrant ssh --command "sudo puppet agent --test" node0$n ; done
 
 # FIXME - set supplementary group for puppetboard user so it can read certs in puppet dir
 # should be able to to this a better way, eg. in puppet
-vagrant ssh --command "sudo usermod -G puppet -a puppetboard" node04
+vagrant ssh --command "sudo usermod -G puppet -a puppetboard && sudo service httpd restart" node04
 
-Now browse to http://pboard.ubnt.int.yo61.net
+Now browse to http://pboard.ubnt.int.yo61.neto
+
+If there are problems, check puppetboard can talk to puppetdb as follows:
+
+vagrant ssh node04
+sudo su - puppetboard
+curl 'https://puppetdb.ubnt.int.yo61.net:8081/v3/facts/node01' --cacert /var/lib/puppet/ssl/certs/ca.pem --cert /var/lib/puppet/ssl/certs/pboard.ubnt.int.yo61.net.pem --key /var/lib/puppet/ssl/private_keys/pboard.ubnt.int.yo61.net.pem
+
+You should not get an error, and get an empty set back, ie. [ ]
