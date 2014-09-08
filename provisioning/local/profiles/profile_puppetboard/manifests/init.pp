@@ -17,13 +17,13 @@ class profile_puppetboard{
       ensure  => file,
       content => $ssl_key,
       owner   => 'puppetboard',
-      group   => 'apache',
+      group   => 'puppet',
       mode    => '0640';
     $ssl_cert_path:
       ensure  => file,
       content => $ssl_cert,
       owner   => 'puppetboard',
-      group   => 'apache',
+      group   => 'puppet',
       mode    => '0644';
   }
   class{'::apache':}
@@ -31,6 +31,8 @@ class profile_puppetboard{
     wsgi_socket_prefix => '/var/run/wsgi',
   }
   class{'::puppetboard':
+    group               => 'puppet',
+    manage_group        => false,
     manage_git          => true,
     manage_virtualenv   => true,
     puppetdb_host       => $puppetdb_host,
