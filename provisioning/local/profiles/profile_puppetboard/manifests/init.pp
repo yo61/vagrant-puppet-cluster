@@ -25,7 +25,7 @@ class profile_puppetboard{
       owner   => 'puppetboard',
       group   => 'apache',
       mode    => '0644';
-  }~>
+  }
   class{'::apache':}
   class{'::apache::mod::wsgi':
     wsgi_socket_prefix => '/var/run/wsgi',
