@@ -31,8 +31,6 @@ class profile_puppetboard{
     wsgi_socket_prefix => '/var/run/wsgi',
   }
   class{'::puppetboard':
-    group               => 'puppet',
-    manage_group        => false,
     manage_git          => true,
     manage_virtualenv   => true,
     puppetdb_host       => $puppetdb_host,
