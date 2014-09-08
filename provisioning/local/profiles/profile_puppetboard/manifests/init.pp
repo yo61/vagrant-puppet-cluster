@@ -33,6 +33,7 @@ class profile_puppetboard{
   class{'::puppetboard':
     manage_git          => true,
     manage_virtualenv   => true,
+    groups              =>'puppet',
     puppetdb_host       => $puppetdb_host,
     puppetdb_port       => $puppetdb_port,
     puppetdb_key        => $ssl_key_path,

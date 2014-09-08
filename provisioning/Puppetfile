@@ -33,7 +33,7 @@ mod 'yo61-puppetdb',
 
 mod 'yo61-puppetboard',
   :git => 'git://github.com/yo61/puppet-module-puppetboard.git',
-  :ref => 'feature/rename_puppetdb_ssl_to_puppetdb_ssl_verify'
+  :ref => 'develop'
 
 # Roles (from local dir)
 mod 'local-role_postgresql_server_puppetdb',

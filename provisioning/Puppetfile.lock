@@ -36,8 +36,8 @@ GIT
 
 GIT
   remote: git://github.com/yo61/puppet-module-puppetboard.git
-  ref: feature/rename_puppetdb_ssl_to_puppetdb_ssl_verify
-  sha: 50127b5b574a7e3b8e3eec9440e348ab7f6ca304
+  ref: develop
+  sha: 4ca7fb9e49cb6479a5998a9b82a40c21240944e5
   specs:
     yo61-puppetboard (2.5.0)
       puppetlabs-stdlib (>= 3.0.0)
