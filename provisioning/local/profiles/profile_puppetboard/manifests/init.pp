@@ -17,14 +17,14 @@ class profile_puppetboard{
       ensure  => file,
       content => $ssl_key,
       owner   => 'puppetboard',
-      group   => 'puppetboard',
+      group   => 'apache',
       mode    => '0640';
     $ssl_cert_path:
       ensure  => file,
       content => $ssl_cert,
       owner   => 'puppetboard',
-      group   => 'puppetboard',
-      mode    => '0640';
+      group   => 'apache',
+      mode    => '0644';
   }~>
   class{'::apache':}
   class{'::apache::mod::wsgi':
