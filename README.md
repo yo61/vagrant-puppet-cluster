@@ -13,6 +13,7 @@ puppet is used to provision the hosts - modules are installed to the modules dir
 
 Getting Started
 ---------------
+This vagrant config uses CentOS 6.5 images running in VirtualBox.
 ```
 vagrant plugin install vagrant hostmanager
 gem install librarian puppet
@@ -32,9 +33,6 @@ vagrant ssh --command 'for n in 1 2 3 4 ; do sudo puppet cert sign node0$n.ubnt.
 # second run - cert gets pulled down to client and populates puppetdb
 for n in 1 2 3 4; do vagrant ssh --command "sudo puppet agent --test" node0$n ; done
 
-# FIXME - set supplementary group for puppetboard user so it can read certs in puppet dir
-# should be able to to this a better way, eg. in puppet
-vagrant ssh --command "sudo usermod -G puppet -a puppetboard && sudo service httpd restart" node04
 ```
 Now browse to http://pboard.ubnt.int.yo61.net
 
