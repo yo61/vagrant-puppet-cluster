@@ -13,15 +13,12 @@ puppet is used to provision the hosts - modules are installed to the modules dir
 
 Getting Started
 ---------------
+```
 vagrant plugin install vagrant hostmanager
 gem install librarian puppet
 cd provisioning && librarian-puppet install
 vagrant up
-
-puppetboard is available at:
-
-http://pboard.ubnt.int.yo61.net
-
+```
 All server certs are pre-generated and deployed from hiera.
 
 To generate client certs, run the following code:
