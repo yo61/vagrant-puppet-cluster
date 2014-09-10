@@ -9,6 +9,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
+  config.librarian_puppet.puppetfile_dir = "provisioning"
+  # placeholder_filename defaults to .PLACEHOLDER
+  config.librarian_puppet.placeholder_filename = '.PLACEHOLDER'
+
   # define some global defaults for the virtualbox provider
   config.vm.provider :virtualbox do |vb|
     vb.memory = 640

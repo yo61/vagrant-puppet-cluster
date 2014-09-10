@@ -1,0 +1,7 @@
+Since the puppet provisioner will fail if the path provided to "puppet.modules"
+doesn't exist and librarian-puppet will destroy and recreate the modules
+directory on each run, the vagrant-librarian-puppet plugin supports a
+placeholder file within the modules directory that can be checked into version
+control and will persist between provisions.
+
+This is that file.
