@@ -1,8 +1,12 @@
 # build a puppetdb server
 class role_puppetdb_server {
 
-  include ::profile_common
-  include ::profile_postgresql_client
-  include ::profile_puppetdb
+  class{'::profile_common':}->
+  class{'::profile_postgresql_client':}->
+  class{'::profile_puppetdb':}
+
+  contain 'profile_common'
+  contain 'profile_postgresql_client'
+  contain 'profile_puppetdb'
 
 }

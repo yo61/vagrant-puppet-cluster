@@ -1,7 +1,10 @@
 # build a puppetboard server
 class role_puppetboard {
 
-  include ::profile_common
-  include ::profile_puppetboard
+  class{'::profile_common':}->
+  class{'::profile_puppetboard':}
+
+  contain 'profile_common'
+  contain 'profile_puppetboard'
 
 }
