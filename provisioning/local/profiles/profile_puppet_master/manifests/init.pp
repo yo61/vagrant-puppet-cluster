@@ -1,9 +1,11 @@
 # install a puppet master
 class profile_puppet_master{
 
+  require ::puppet::master
+
   $storeconfigs_dbserver = hiera('puppetdb.certname')
   $puppet_certname = hiera('puppet.master.certname')
-  $ssldir = '/var/lib/puppet/ssl'
+  $modulepath = $::puppet::master::module_path
 
   class{'puppet::master':
     environments               => 'directory',
@@ -21,7 +23,7 @@ class profile_puppet_master{
   Service['httpd']
 
   puppet::masterenv{'production':
-    modulepath => '/etc/puppet/modules',
+    modulepath => $modulepath,
     manifest   => 'production',
   }
   # create production env. directory
